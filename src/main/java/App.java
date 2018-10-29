@@ -29,14 +29,17 @@ public class App {
       case 1:
         String nombreBuscado = opcion.next();
         opcion.nextLine();
-        busqueda.(nombreBuscado);
+        Expediente encontrado = busqueda.buscarPorNombre(nombreBuscado);
         break;
       case 2:
+      //por fecha
         break;
       case 3:
+      //por identificador
         int identificador = opcion.nextInt();
         opcion.nextLine();
         busqueda.buscarPorNumeroExpediente(identificador);
+
         break;
       case 4:
         System.out.println(

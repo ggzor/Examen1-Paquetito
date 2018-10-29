@@ -18,6 +18,7 @@ public class Busqueda {
         encontrado = busqueda;
       }
     }
+    return encontrado;
   }
 
   public ArrayList<Nombre> buscarPorFechaConsultaDeterminada(String buscado) {
