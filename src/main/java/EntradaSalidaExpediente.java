@@ -1,13 +1,13 @@
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Vector;
 
 public class  EntradaSalidaExpediente {
 
-  public static Vector<String> leerExpedienenteR() {
-
+  public static Vector<String> leerExpedienenteR() throws FileNotFoundException {
     FileInputStream archivo = new FileInputStream("Pacientes.txt");
     Scanner sc = new Scanner(archivo);
     Vector<String> vector = new Vector<String>();
@@ -18,7 +18,7 @@ public class  EntradaSalidaExpediente {
     return vector;
   }
 
-  public static ArrayList<ExpedienteRegular> leerExpedienteRegular() {
+  public static ArrayList<ExpedienteRegular> leerExpedienteRegular() throws FileNotFoundException {
     Vector<String> vector = leerExpedienenteR();
     ArrayList<ExpedienteRegular> expedientesRegulares = new ArrayList<ExpedienteRegular>();
 
@@ -63,7 +63,7 @@ public class  EntradaSalidaExpediente {
 
 
 
-  public static Vector<String> leerExpedienenteD() {
+  public static Vector<String> leerExpedienenteD() throws FileNotFoundException {
 
     FileInputStream archivo = new FileInputStream("PacientesDiabeticos.txt");
     Scanner sc2 = new Scanner(archivo);
@@ -75,7 +75,7 @@ public class  EntradaSalidaExpediente {
     return vector2;
   }
 
-  public static ArrayList<ExpedienteDiabetico> leerExpedienteDiabetico() {
+  public static ArrayList<ExpedienteDiabetico> leerExpedienteDiabetico() throws FileNotFoundException {
     Vector<String> vector2 = leerExpedienenteD();
     ArrayList<ExpedienteDiabetico> expedientesDiabeticos = new ArrayList<ExpedienteDiabetico>();
 
@@ -115,7 +115,7 @@ public class  EntradaSalidaExpediente {
 
 
   
-  public static Vector<String> leerExpedienenteM() {
+  public static Vector<String> leerExpedienenteM() throws FileNotFoundException {
 
     FileInputStream archivo = new FileInputStream("PacientesMenores.txt");
     Scanner sc3 = new Scanner(archivo);
@@ -127,7 +127,7 @@ public class  EntradaSalidaExpediente {
     return vector3;
   }
 
-  public static ArrayList<ExpedienteMenorEdad> leerExpedienteMenor() {
+  public static ArrayList<ExpedienteMenorEdad> leerExpedienteMenor() throws FileNotFoundException {
     Vector<String> vector3 = leerExpedienenteM();
     ArrayList<ExpedienteMenorEdad> expedientesMenoresEdad = new ArrayList<ExpedienteMenorEdad>();
 
