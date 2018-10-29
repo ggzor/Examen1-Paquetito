@@ -1,7 +1,11 @@
 import java.util.Vector;
+import java.util.ArrayList;
+
 
 public class Busqueda {
-
+  private ArrayLimport <Expediente> arreglo = new ArrayList <Expediente>();
+  
+  
   public Expediente buscarPorNumeroExpediente() {
     return null;
   }

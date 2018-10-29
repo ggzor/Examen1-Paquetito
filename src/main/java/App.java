@@ -21,7 +21,7 @@ public class App {
             + "\t 0.-Salir. \n ");
         
     int entrada = opcion.nextInt();  
-    
+    opcion.nextLine();
     do {
       switch (entrada) {
       case 1:
@@ -38,7 +38,6 @@ public class App {
         do {
           switch (opcion.nextInt()) {
           case 1:
-            
             break;
           case 2:
             break;
