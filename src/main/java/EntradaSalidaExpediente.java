@@ -7,8 +7,8 @@ import java.util.Vector;
 
 public class  EntradaSalidaExpediente {
 
-  public static Vector<String> leerExpedienenteR() throws FileNotFoundException {
-    FileInputStream archivo = new FileInputStream("Pacientes.txt");
+  public static Vector<String> leerExpedientesArchivo(String nombreArchivo) throws FileNotFoundException {
+    FileInputStream archivo = new FileInputStream(nombreArchivo);
     Scanner sc = new Scanner(archivo);
     Vector<String> vector = new Vector<String>();
 
@@ -19,7 +19,7 @@ public class  EntradaSalidaExpediente {
   }
 
   public static ArrayList<ExpedienteRegular> leerExpedienteRegular() throws FileNotFoundException {
-    Vector<String> vector = leerExpedienenteR();
+    Vector<String> vector = leerExpedientesArchivo("Pacientes.txt");
     ArrayList<ExpedienteRegular> expedientesRegulares = new ArrayList<ExpedienteRegular>();
 
     for (int i = 0; i < vector.size(); i++) {
@@ -61,22 +61,8 @@ public class  EntradaSalidaExpediente {
     );
   }
 
-
-
-  public static Vector<String> leerExpedienenteD() throws FileNotFoundException {
-
-    FileInputStream archivo = new FileInputStream("PacientesDiabeticos.txt");
-    Scanner sc2 = new Scanner(archivo);
-    Vector<String> vector2 = new Vector<String>();
-
-    while (sc2.hasNext()) {
-      vector2.addElement(sc2.nextLine());
-    }
-    return vector2;
-  }
-
   public static ArrayList<ExpedienteDiabetico> leerExpedienteDiabetico() throws FileNotFoundException {
-    Vector<String> vector2 = leerExpedienenteD();
+    Vector<String> vector2 = leerExpedientesArchivo("PacientesDiabeticos.txt");
     ArrayList<ExpedienteDiabetico> expedientesDiabeticos = new ArrayList<ExpedienteDiabetico>();
 
     for (int i = 0; i < vector2.size(); i++) {
@@ -112,23 +98,8 @@ public class  EntradaSalidaExpediente {
     return new ConsultaGlucosa(Integer.parseInt(sc2.next()), leerFecha(sc2.next()));
   }
 
-
-
-  
-  public static Vector<String> leerExpedienenteM() throws FileNotFoundException {
-
-    FileInputStream archivo = new FileInputStream("PacientesMenores.txt");
-    Scanner sc3 = new Scanner(archivo);
-    Vector<String> vector3 = new Vector<String>();
-
-    while (sc3.hasNext()) {
-      vector3.addElement(sc3.nextLine());
-    }
-    return vector3;
-  }
-
   public static ArrayList<ExpedienteMenorEdad> leerExpedienteMenor() throws FileNotFoundException {
-    Vector<String> vector3 = leerExpedienenteM();
+    Vector<String> vector3 = leerExpedientesArchivo("PacientesMenores.txt");
     ArrayList<ExpedienteMenorEdad> expedientesMenoresEdad = new ArrayList<ExpedienteMenorEdad>();
 
     for (int i = 0; i < vector3.size(); i++) {
