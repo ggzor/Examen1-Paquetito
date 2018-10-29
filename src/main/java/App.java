@@ -17,20 +17,22 @@ public class App {
     arreglo.addAll(arreglo3);
 
     Busqueda busqueda = new Busqueda(arreglo);
-    
-    System.out.println("\t\t\t Menú: \nSeleccione una opción:\n" + "\t 1.-Buscar la imformacion de un paciente por nombre.\n"
-            + "\t 2.-Buscar el nombre de los paciente que acudieron \n" + "\t a una consulta en determinada fecha.\n"
-            + "\t 3.-Buscar por número de expediente.\n" + "\t 4.-Número de cada tipo de pacientes. \n "
-            + "\t 0.-Salir. \n ");
-        
-    int entrada = opcion.nextInt();  
-    opcion.nextLine();
+  
     do {
+      System.out.println("\t\t\t Menú: \nSeleccione una opción:\n" + "\t 1.-Buscar la imformacion de un paciente por nombre.\n"
+      + "\t 2.-Buscar el nombre de los paciente que acudieron \n" + "\t a una consulta en determinada fecha.\n"
+      + "\t 3.-Buscar por número de expediente.\n" + "\t 4.-Número de cada tipo de pacientes. \n "
+      + "\t 0.-Salir. \n ");
+
+      System.out.println("Opcion: "); 
+      int entrada = opcion.nextInt();         
+      opcion.nextLine();
+
       switch (entrada) {
       case 1:
       //por nombre
-        String nombreBuscado = opcion.next();
-        opcion.nextLine();
+        System.out.println("Ingrese el nombre: ");
+        String nombreBuscado = opcion.nextLine();
         Expediente encontrado1 = busqueda.buscarPorNombre(nombreBuscado);
 
         if (encontrado1 == null){
@@ -41,6 +43,7 @@ public class App {
         break;
       case 2:
       //por fecha
+        System.out.println("Ingrese la fecha: ");
         String fechaBuscada = opcion.next();
         opcion.nextLine();
         ArrayList<Nombre> encontrados = busqueda.buscarPorFechaConsultaDeterminada(fechaBuscada);
@@ -55,6 +58,7 @@ public class App {
         break;
       case 3:
       //por identificador
+        System.out.println("Ingrese el identificador: ");
         int identificador = opcion.nextInt();
         opcion.nextLine();
         Expediente encontrado = busqueda.buscarPorNumeroExpediente(identificador);
