@@ -9,38 +9,41 @@ public class Busqueda {
     this.arreglo = arreglo;
   }
   
-  public void buscarPorNumeroExpediente(int buscado) {
+  public Expediente buscarPorNumeroExpediente(int buscado) {
+    Expediente encontrado = null;
+
     for (int i = 0; i < arreglo.size(); i++) {
       Expediente busqueda = arreglo.get(i);
       if(busqueda.getIdentificador() == buscado){
-  
+        encontrado = busqueda;
       }
     }
   }
 
-  public Nombre buscarPorFechaConsultaDeterminada(String buscado) {
+  public ArrayList<Nombre> buscarPorFechaConsultaDeterminada(String buscado) {
     ArrayList<Nombre> nombres = new ArrayList <Nombre>(); 
 
     for (int i = 0; i < arreglo.size(); i++) {
       Expediente busqueda = arreglo.get(i);
-      for (int j = 0; i < max; g++) {
-        
-      }
-      if(busqueda.getConsultas().get(i)
-      .toString().equals(buscado) ){
-  
+      for (int j = 0; j < busqueda.getConsultas().size(); j++) {
+        if(busqueda.getConsultas().get(j).toString().equals(buscado)) {
+          nombres.add(busqueda.getPaciente().getNombre()); 
+        }
       }
     }
-  }
+    return nombres;
   }
 
-  public void buscarPorNombre(String buscado) {
+  public Expediente buscarPorNombre(String buscado) {
+    Expediente encontrado = null;
+
     for (int i = 0; i < arreglo.size(); i++) {
       Expediente busqueda = arreglo.get(i);
-      if(busqueda.getPaciente().getNombre().toString().equals(buscado) ){
-  
+      if(busqueda.getPaciente().getNombre().toString().equals(buscado)){
+        encontrado = busqueda;
       }
     }
+    return encontrado;
   }
 
   public int contarNumeroPacientesRegulares() {
