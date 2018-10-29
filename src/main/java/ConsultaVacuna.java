@@ -14,4 +14,8 @@ public class ConsultaVacuna {
   public String getTipoVacuna() {
     return tipoVacuna;
   }
+
+  public String toString() {
+    return fechaConsulta + " -> " + tipoVacuna;    
+  }
 }
