@@ -25,7 +25,7 @@ public class  EntradaSalidaExpediente {
     for (int i = 0; i < vector.size(); i++) {
       expedientesRegulares.add(leerPacienteRegular(vector.get(i)));
     }
-    return null;
+    return expedientesRegulares;
   }
 
   public static ExpedienteRegular leerPacienteRegular(String cadena) {
@@ -68,7 +68,7 @@ public class  EntradaSalidaExpediente {
     for (int i = 0; i < vector2.size(); i++) {
       expedientesDiabeticos.add(leerPacienteDiabetico(vector2.get(i)));
     }
-    return null;
+    return expedientesDiabeticos;
   }
 
   public static ExpedienteDiabetico leerPacienteDiabetico(String cadena) {
@@ -105,7 +105,7 @@ public class  EntradaSalidaExpediente {
     for (int i = 0; i < vector3.size(); i++) {
       expedientesMenoresEdad.add(leerPacienteMenorEdad(vector3.get(i)));
     }
-    return null;
+    return expedientesMenoresEdad;
   }
 
   public static ExpedienteMenorEdad leerPacienteMenorEdad(String cadena) {
