@@ -27,18 +27,41 @@ public class App {
     do {
       switch (entrada) {
       case 1:
+      //por nombre
         String nombreBuscado = opcion.next();
         opcion.nextLine();
-        Expediente encontrado = busqueda.buscarPorNombre(nombreBuscado);
+        Expediente encontrado1 = busqueda.buscarPorNombre(nombreBuscado);
+
+        if (encontrado1 == null){
+          System.out.println("Nombre no encontrado");
+        }else{
+          System.out.println(encontrado1.toString());
+        }
         break;
       case 2:
       //por fecha
+        String fechaBuscada = opcion.next();
+        opcion.nextLine();
+        ArrayList<Nombre> encontrados = busqueda.buscarPorFechaConsultaDeterminada(fechaBuscada);
+         
+        if (encontrados == null){
+          System.out.println("Nombre no encontrado");
+        }else{
+          for(int i = 0; i < encontrados.size(); i++) {
+            System.out.println(encontrados.get(i).toString());
+          }
+        }
         break;
       case 3:
       //por identificador
         int identificador = opcion.nextInt();
         opcion.nextLine();
-        busqueda.buscarPorNumeroExpediente(identificador);
+        Expediente encontrado = busqueda.buscarPorNumeroExpediente(identificador);
+        if (encontrado == null){
+          System.out.println("Identificador no encontrado");
+        }else{
+          System.out.println(encontrado.toString());
+        }
 
         break;
       case 4:
