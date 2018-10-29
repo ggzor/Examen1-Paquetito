@@ -25,6 +25,17 @@ public abstract class Expediente {
     return identificador;
   }
 
+  public String toString() {
+    StringBuilder consultasString = new StringBuilder();
 
-  
+    for (int i = 0; i < consultas.size(); i++) {
+      consultasString.append("  - ");
+      consultasString.append(consultas.get(i));
+      consultasString.append('\n');
+    }
+
+    return "Identificador: " + identificador + "\n"
+         + paciente + "\n"
+         + "Consultas: \n" + consultasString;
+  }
 }
