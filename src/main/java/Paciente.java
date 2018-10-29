@@ -39,5 +39,13 @@ public class Paciente {
   public String getNumeroTelefonico() {
     return numeroTelefonico;
   }
-  
+
+  public String toString() {
+    return "Paciente: " + nombre + "\n"
+         + "Fecha de nacimiento: " + fechaNacimiento + "\n"
+         + "Género: " + genero + "\n"
+         + "Peso: " + String.format("%.1f", peso) + "\n"
+         + "Estatura: " + String.format("%.2f", estatura) + "\n"
+         + "Número telefónico: " + numeroTelefonico;
+  }
 }
