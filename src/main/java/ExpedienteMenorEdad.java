@@ -11,4 +11,17 @@ public class ExpedienteMenorEdad extends Expediente {
   public Vector<ConsultaVacuna> getRegistroVacunas() {
     return registroVacunas;
   }
+
+  public String toString() {
+    StringBuilder registroVacunasCadena = new StringBuilder();
+
+    for (int i = 0; i < registroVacunas.size(); i++) {
+      registroVacunasCadena.append("  - ");
+      registroVacunasCadena.append(registroVacunas.get(i));
+      registroVacunasCadena.append('\n');
+    }
+
+    return super.toString() + "\n"
+         + "Registro de vacunas: \n" + registroVacunasCadena;
+  }
 }
