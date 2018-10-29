@@ -20,4 +20,9 @@ public class Nombre {
   public String getApellidoMaterno() {
     return apellidoMaterno;
   }
+
+  @Override
+  public String toString() {
+    return nombre + " " + apellidoPaterno + " " + apellidoMaterno;
+  }
 }
