@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -96,8 +97,10 @@ public class App {
         break;
       }
     } while (opcion.nextInt() != 0);
-   } catch (Exception re) {
-
-   }
-  }
+    }catch(FileNotFoundException fe) {
+      System.out.println("No se encontro el archivo"+ fe.toString());
+    } catch (Exception re) {
+      System.out.println("Error:" + re.toString());
+    }
+  }  
 }
