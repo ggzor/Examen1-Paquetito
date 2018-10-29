@@ -14,4 +14,8 @@ public class ConsultaGlucosa {
   public int getNivelGlucosa() {
     return nivelGlucosa;
   }
+
+  public String toString() {
+    return fechaConsulta + " = " + nivelGlucosa;
+  }
 }
